@@ -28,7 +28,7 @@
          Note: This config is replacing the config_wifi_dual_band_support
          since more bands may now be supported (such as 6GHz), the naming dual_band
          is no longer indicative, and a separate config now exists for each band -->
-    <bool translatable="false" name ="config_wifi5ghzSupport">false</bool>
+    <bool translatable="false" name ="config_wifi5ghzSupport">true</bool>
 
     <!-- boolean indicating whether the WiFi chipset has 6GHz band support -->
     <bool translatable="false" name ="config_wifi6ghzSupport">false</bool>
@@ -69,7 +69,7 @@
     <integer translatable="false" name="config_wifiFrameworkMaxNumSpatialStreamDeviceOverrideValue">2</integer>
 
     <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
-    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">false</bool>
+    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
 
     <!-- Device type information conforming to Annex B format in WiFi Direct specification.
          The default represents a dual-mode smartphone -->
@@ -196,7 +196,7 @@
     <bool translatable="false" name ="config_wifiFrameworkSoftApDisableBridgedModeShutdownIdleInstanceWhenCharging">false</bool>
 
     <!-- Integer indicating maximum hardware supported client number of soft ap -->
-    <integer translatable="false" name="config_wifiHardwareSoftapMaxClientCount">16</integer>
+    <integer translatable="false" name="config_wifiHardwareSoftapMaxClientCount">32</integer>
 
     <!-- boolean indicating whether or not to reset channel configuration during cloud configuration restore -->
     <bool translatable="false" name ="config_wifiSoftapResetChannelConfig">true</bool>
@@ -219,7 +219,7 @@
     <!-- List of allowed channels in 2GHz band for softap. If the device doesn't want to restrict
          channels this should be empty. Values is a comma separated channel string and/or channel
          range string like '1-6,11'. -->
-    <string  translatable="false" name="config_wifiSoftap2gChannelList">1-11</string>
+    <string  translatable="false" name="config_wifiSoftap2gChannelList"></string>
 
     <!-- List of allowed channels in 5GHz band for softap. If the device doesn't want to restrict
          channels this should be empty. Values is a comma separated channel string and/or channel
@@ -240,7 +240,7 @@
     <integer translatable="false" name="config_wifi_framework_associated_partial_scan_max_num_active_channels">6</integer>
 
     <!-- Integer delay in milliseconds before set wlan interface up during watchdog recovery -->
-    <integer translatable="false" name="config_wifi_framework_recovery_timeout_delay">2000</integer>
+    <integer translatable="false" name="config_wifi_framework_recovery_timeout_delay">3000</integer>
 
     <!-- Boolean indicating associated network selection is allowed -->
     <bool translatable="false" name="config_wifi_framework_enable_associated_network_selection">true</bool>
@@ -288,7 +288,7 @@
     <bool translatable="false" name="config_wifiEnableLinkedNetworkRoaming">false</bool>
 
     <!-- Boolean indicating that only configurations that have the same pre-shared key will be linked -->
-    <bool translatable="false" name="config_wifi_only_link_same_credential_configurations">true</bool>
+    <bool translatable="false" name="config_wifi_only_link_same_credential_configurations">false</bool>
 
     <!-- Boolean indicating whether framework needs to set the tx power limit for meeting SAR requirements -->
     <bool translatable="false" name="config_wifi_framework_enable_sar_tx_power_limit">false</bool>
@@ -304,16 +304,16 @@
     <bool translatable="false" name="config_wifiSofapClientForceDisconnectSupported">true</bool>
 
     <!-- Wifi driver supports Automatic channel selection (ACS) for softap -->
-    <bool translatable="false" name="config_wifi_softap_acs_supported">false</bool>
+    <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
 
     <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
-    <bool translatable="false" name="config_wifi_softap_sae_supported">false</bool>
+    <bool translatable="false" name="config_wifi_softap_sae_supported">true</bool>
 
     <!-- Wifi driver supports Mac address customization for softap -->
     <bool translatable="false" name="config_wifiSoftapMacAddressCustomizationSupported">true</bool>
 
     <!-- Wifi driver supports IEEE80211AC for softap -->
-    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">false</bool>
+    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
     <!-- Wifi driver supports IEEE80211AX for softap -->
     <bool translatable="false" name="config_wifiSoftapIeee80211axSupported">false</bool>
@@ -365,14 +365,14 @@
     <bool translatable="false" name="config_wifiSaveFactoryMacToWifiConfigStore">true</bool>
 
     <!-- Indicates that connected MAC randomization is supported on this device -->
-    <bool translatable="false" name="config_wifi_connected_mac_randomization_supported">false</bool>
+    <bool translatable="false" name="config_wifi_connected_mac_randomization_supported">true</bool>
 
     <!-- Indicates that non-persistent MAC randomization is allowed on open networks that do not
      use captive portals -->
     <bool translatable="false" name="config_wifiAllowNonPersistentMacRandomizationOnOpenSsids">false</bool>
 
     <!-- Indicates that p2p MAC randomization is supported on this device -->
-    <bool translatable="false" name="config_wifi_p2p_mac_randomization_supported">false</bool>
+    <bool translatable="false" name="config_wifi_p2p_mac_randomization_supported">true</bool>
 
     <!-- Indicates that AP mode MAC randomization is supported on this device -->
     <bool translatable="false" name="config_wifi_ap_mac_randomization_supported">true</bool>
@@ -445,7 +445,7 @@
 
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,2097152,262144,524288,1048576</string>
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,5505024,262144,524288,5505024</string>
 
     <!-- Do not translate. Default access point SSID used for tethering -->
     <string name="wifi_tether_configure_ssid_default" translatable="false">AndroidAP</string>
@@ -800,7 +800,7 @@
     <integer translatable="false" name="config_wifiChannelUtilizationOverride6g">10</integer>
 
     <!-- Enable WPA2 to WPA3 auto-upgrade -->
-    <bool translatable="false" name="config_wifiSaeUpgradeEnabled">true</bool>
+    <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 
     <!-- Enable WPA2 to WPA3 auto-upgrade offload to capable Driver/Firmware -->
     <bool translatable="false" name="config_wifiSaeUpgradeOffloadEnabled">false</bool>
@@ -823,7 +823,7 @@
     <bool translatable="false" name="config_wifiIgnoreOpenSavedNetworkWhenSecureSuggestionAvailable">true</bool>
 
     <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
-    <bool translatable="false" name="config_wifiSoftapAcsIncludeDfs">false</bool>
+    <bool translatable="false" name="config_wifiSoftapAcsIncludeDfs">true</bool>
 
     <!-- Initial PNO scan interval, in milliseconds, when the device is moving (i.e.
          WifiManager.DEVICE_MOBILITY_STATE_UNKNOWN, WifiManager.DEVICE_MOBILITY_STATE_HIGH_MVMT, or
@@ -851,7 +851,7 @@
     <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">0</integer>
 
     <!-- Enable adding minimum confirmation duration when sending network score to connectivity service. -->
-    <bool translatable="false" name="config_wifiMinConfirmationDurationSendNetworkScoreEnabled">false</bool>
+    <bool translatable="false" name="config_wifiMinConfirmationDurationSendNetworkScoreEnabled">true</bool>
 
     <!-- Enable Make-Before-Break Wifi network switching.
          Note: this is conditional on the device supporting dual concurrent STAs. -->
